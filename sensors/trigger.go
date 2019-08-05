@@ -83,8 +83,8 @@ func (sec *sensorExecutionCtx) canExecuteTrigger(trigger v1alpha1.Trigger) bool 
 			if status := sn.GetNodeByName(sec.sensor, group); status.Type == v1alpha1.NodeTypeDependencyGroup && status.Phase == v1alpha1.NodePhaseComplete {
 				return true
 			}
-			return false
 		}
+		return false
 	}
 	if trigger.Template.When.All != nil {
 		for _, group := range trigger.Template.When.All {
